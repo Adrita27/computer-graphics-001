@@ -1,3 +1,6 @@
+<?php
+   include ('action.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
 </head>
 <body>
     <h1>Registration form </h1>
-    <form action="action.php"  method="POST" > 
+    <form action=""  method="POST" > 
           <table> 
         
                <tr>   
@@ -17,6 +20,9 @@
                       
                 </td> 
                 <td> <input type="text" id="fname" name="fname" value="" placeholder="name">  </td>
+                    <td>
+                    <span style="color: red;"> <?php  echo $Error; ?> </span>
+                    </td>
                 </tr> 
                    
                <tr>
@@ -24,6 +30,9 @@
                       Email:      
                 </td>
                 <td> <input type="text" id="fmail" name="fmail" value="" placeholder="name@.com">  </td>
+                <td>
+                         <span style="color: red;"> <?php  echo $Error1; ?> </span>
+                    </td>
                </tr>
 
                <td>

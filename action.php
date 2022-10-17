@@ -1,25 +1,40 @@
-<?php
-       if(isset($_POST['submit']))
+<?php 
+    $Error = "";
+    $Error1 = "";
+     
+
+       if(isset($_REQUEST['submit']))
        {
-          $username = $_POST['fname'];
-          $password = $_POST['fpass'];
-          $Cpassword = $_POST['fCpass'];
+          $username = $_REQUEST['fname'];
+          $usermail = $_REQUEST['fmail'];
+          $password = $_REQUEST['fpass'];
+          $Cpassword = $_REQUEST['fCpass'];
         
-          if(strlen($_POST['fpass']) <8 )
+          if(empty($_REQUEST['fname']))
             {
-                echo "Password Should be more then 8 character";
+                $Error = "Enter the name";
             }
             else
             {
-                if(strcmp($password,$password) == 0 )
+                if(!preg_match( '/^[a-zA-Z\s]+$/' ,$username))
                 {
-                    echo "Successful";
-                }
-                else
-                {
-                    echo "password dosen't matched ";
+                     $Error = "Please input valid name";
                 }
             }
+
+            if(empty( $usermail))
+            {
+                $Error1 = "Input email address";
+            }
+            else
+            {
+                if (!filter_var($usermail, FILTER_VALIDATE_EMAIL))
+                {
+                    $Error1 = "Enter valid email...";
+                }
+            }
+
+
   
        }
 
