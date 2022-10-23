@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>Registration form </h1>
-    <form action=""  method="POST" > 
+    <form action=""  method="POST" enctype="multipart/form-data" > 
           <table> 
         
                <tr>   
@@ -123,7 +123,7 @@
                         Select Image
                     </td>
                     <td>
-                    <input type="file" id="img" name="img" accept="image/*">
+                    <input type="file" id="img" name="image" ">
                     </td>
                 </tr>
 

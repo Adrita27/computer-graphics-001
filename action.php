@@ -36,6 +36,18 @@
                      $Error1 = "it's not a valid email address";
                 }
             }
+               //for image 
+             if(empty($_FILES["image"]["name"]))
+             {
+                echo "no file upload";
+             }
+             else{
+                    echo "your file name".$_FILES["image"]["name"];
+                    
+
+             }
+
+
             if($hasError==0)
             {
                 $exixtingdata = file_get_contents("Data.json");
