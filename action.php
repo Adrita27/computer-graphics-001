@@ -1,6 +1,7 @@
 <?php 
     $Error = "";
     $Error1 = "";
+    $hasError=0;
      
 
        if(isset($_REQUEST['submit']))
@@ -10,7 +11,7 @@
           $password = $_REQUEST['fpass'];
           $Cpassword = $_REQUEST['fCpass'];
         
-          if(empty($_REQUEST['fname']))
+          if(empty($_POST['fname']))
             {
                 $Error = "Enter the name";
             }
@@ -22,17 +23,46 @@
                 }
             }
 
-            if(empty( $usermail))
+            if(empty($_POST['fmail']))
             {
-                $Error1 = "Input email address";
+                $Error1 = "Enter the email";
             }
             else
             {
-                if (!filter_var($usermail, FILTER_VALIDATE_EMAIL))
-                {
-                    $Error1 = "Enter valid email...";
+                if (filter_var($_POST['fmail'], FILTER_VALIDATE_EMAIL)) {
+                    $Error1="ok";
+                } 
+                else {
+                     $Error1 = "it's not a valid email address";
                 }
             }
+            if($hasError==0)
+            {
+                $exixtingdata = file_get_contents("Data.json");
+                $existingdatainphp = json_decode($exixtingdata);
+                 
+                $myarr=array(
+                      "Name"=> $_REQUEST["fname"],
+                      "Gender"=> $_REQUEST["gender"],
+                      "Age"=> $_REQUEST["fage"]
+                      
+                );
+
+                $existingdatainphp[]= $myarr;
+                $myjsonobj= json_encode($existingdatainphp , JSON_PRETTY_PRINT);
+                
+                file_put_contents("Data.json",$myjsonobj);
+
+                $mydata= file_get_contents("Data.json");
+                $myphpdata = json_decode($mydata);
+
+
+                echo "<br> Print from json: ".$myphpdata[0] -> Name ;
+
+            }
+
+            
+            
 
 
   

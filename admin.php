@@ -63,6 +63,50 @@
 
                  </tr>
 
+                 <tr>
+                    <td>Nominee Name :</td>
+                    <td> <input type="text" id="fnominee" name="fnominee" value="" placeholder="enter Nominee Name"> </td>
+
+                     <td>
+                     <td>Nominee Age  :</td>
+                           <td>
+                           <input type="number" id="fnomineeage" name="fnomineeage" value="" placeholder="age">
+                           </td>
+
+                           <td>
+                                        Gender:                                    
+                                  </td>
+                                  <td>
+                                    <input type="radio" name="nomineegender">Male <br>
+                                    <input type="radio" name="nomineegender">Female
+                                  </td>
+                     </td>
+
+                       <td>
+                             <td> Relation with Admin :  </td>
+                                   <td>
+                                   <select id="nomineeRelation" name="nomineeRelation">
+                                    <option value="Son">Son</option>
+                                     <option value="Doughter">Doughter</option>
+                                      <option value="Brother">Brother</option>
+                                          <option value="Sister">Sister</option>
+                                     </select>
+                                  </td>
+                             
+                        </td>
+                </tr>
+
+                <tr>
+                    <td>
+                             TIN Number:
+                    </td>
+                    <td>
+                         <input type="text" name="tin number" id="" placeholder="Enter  TIN Number ">
+                    </td>
+                </tr>
+
+
+
                 <tr>
                     <td>Pasword:</td>
                     <td> <input type="password" id="fpass" name="fpass" value="" placeholder="E Password"> </td>
