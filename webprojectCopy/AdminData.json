@@ -1,0 +1,15 @@
+[
+    {
+        "Name": "Amit",
+        "Email": "amit@gmail.com",
+        "Number": "3435643432",
+        "Gender": "on",
+        "DOB": "2000-12-22",
+        "Nominee_Name": "Sadi",
+        "Nominee_Age": "22",
+        "Nominee_Gender": "on",
+        "Relation_with_User": "Son",
+        "Tin_Number": "222556",
+        "Password": "Aa12@@"
+    }
+]
